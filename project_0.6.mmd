@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/spaexampleapp/new_note_spa
+    activate server
+    Note right of browser: Browser calls onSubmit function which creates new note, adds new note, clears submit field, redraws and sends the new note to server
+    server-->>browser: JSON message: note created
+    deactivate server
